@@ -6,11 +6,14 @@ function addItem(form) {
     const itemName = form.itemName.value
     const itemPrice = form.itemPrice.value
 
-    if (form.itemPrice.value === "" || form.itemName.value === "") {
+    if (itemPrice === "" || itemName === "") {
         alert("PLEASE PUT All ITEM COMPLETE");
         return false
+    } else if (parseInt(itemPrice) === NaN) {
+        alert("PLEASE PUT THE CORRECT NUMBER")
     }
 
+    console.log(parseInt(itemName));
     totalPrice += parseInt(itemPrice)
     totalPriceElement.innerText = `Total Price : $${totalPrice}`;
 
